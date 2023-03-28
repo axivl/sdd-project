@@ -21,5 +21,7 @@ app.get("/", (req, res) => {
 })
 
 app.post('/submit', urlencodedParser, function(req,res) {
-
+    let load = req.body.load;
+    serial.update(load);
+    res.send("OK");
 })
