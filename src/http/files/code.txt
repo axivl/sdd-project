@@ -61,19 +61,19 @@ String   inputString = "";
 
 void loop() {
   if (Serial.available() > 0) {
-      charRead = Serial.read();
-      if charRead != "😊" {
-        inputString += charRead
-      } else {
+      char charRead = Serial.read();
+      if ((charRead) == "😊") {
         lcd.clear();
         lcd.setCursor(0,0);
-        if inputString.length()<16 {
-          lcd.print(inputString)
+        if (inputString.length()<16) {
+          lcd.print(inputString);
         } else {
-          lcd.print(inputString.substr(0,15))
+          lcd.print(inputString.substring(0,15));
           lcd.setCursor(0,1);
-          lcd.print(inputString.substr(16))
+          lcd.print(inputString.substring(16));
         }
-      }
-  }
-}
+      } else {
+        inputString += charRead;
+      };
+  };
+};
