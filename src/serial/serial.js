@@ -15,7 +15,7 @@ SerialPort.list().then(ports => {
 
     if (typeof pm !== 'undefined' && pm.includes('arduino')) {
       path = port.path
-      ArduinoPort = new SerialPort({path: path, baudRate: 9600 })
+      ArduinoPort = new SerialPort({path: path, baudRate: 115200 })
       ArduinoPort.on('open', function(){
         console.log(`connected! arduino is now connected at port ${path}`)
       })
