@@ -33,7 +33,7 @@ SerialPort.list().then(ports => {
 module.exports = {
   async update(data) {
     ArduinoPort.write(data);
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 1000));
     ArduinoPort.write("😊");
   },
 };
