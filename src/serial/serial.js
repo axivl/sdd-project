@@ -2,7 +2,7 @@
 
 const { SerialPort } = require("serialport");
 const Readline = require("@serialport/parser-readline");
-const port = new SerialPort({path: "/dev/ttyACM0", baudRate: 9600 });
+const port = new SerialPort({path: "/dev/ttyACM1", baudRate: 9600 });
 // Read the port data
 port.on("open", () => {
   console.log("serial port open");
